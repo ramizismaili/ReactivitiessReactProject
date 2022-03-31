@@ -27,7 +27,7 @@ const requests = {
     put: <T> (url: string, body: {}) => axios.put<T>(url, body).then(responseBody),
     del: <T> (url: string) => axios.delete<T>(url).then(responseBody),
 }
-
+// dssdfsdfsd
 const Activities = {
     list: () => requests.get<Activity[]>('/activities'),
     details: (id: string) => requests.get<Activity>(`/activities/${id}`),
