@@ -11,7 +11,9 @@ namespace Persistence
         }
 
         public DbSet<Activity> Activities { get; set; }
+        public DbSet<Travel> Travelies { get; set; }
         public DbSet<ActivityAttendee> ActivityAtendees { get; set; }
+        public DbSet<TravelAttendee> TravelAtendees { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
