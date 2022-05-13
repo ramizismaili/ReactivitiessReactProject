@@ -33,7 +33,7 @@ export default observer (function TravelDetailedHeader({travel}: Props) {
                 ribbon color='red' content='Cancelled' />
                 }
                 <Image src={`/assets/categoryImages/${travel.category}.jpg`} fluid style={travelImageStyle}/>
-                <Segment style={travelImageTextStyle} basic> // tt T
+                <Segment style={travelImageTextStyle} basic>
                     <Item.Group>
                         <Item>
                             <Item.Content>
@@ -64,7 +64,7 @@ export default observer (function TravelDetailedHeader({travel}: Props) {
                     />
                          <Button as={Link}
                          disabled={travel.isCancelled}
-                          to={`/manage/${travel.id}`}
+                          to={`/manageT/${travel.id}`}
                            color='orange' 
                            floated='right'>
                             Manage Event

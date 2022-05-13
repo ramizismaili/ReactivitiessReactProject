@@ -52,7 +52,7 @@ function App() {
 
                 <Route exact path='/travelies' component={TravelDashboard} />
                 <Route path='/travelies/:id' component={TravelDetails} />
-                <Route key={location.key} path={['/createTravel', '/manage/:id']} component={TravelForm} />
+                <Route key={location.key} path={['/createTravel', '/manageT/:id']} component={TravelForm} />
 
 
                 <Route path='/errors' component={TestErrors} />

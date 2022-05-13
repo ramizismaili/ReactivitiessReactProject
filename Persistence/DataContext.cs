@@ -20,6 +20,8 @@ namespace Persistence
 
             builder.Entity<ActivityAttendee>(x => x.HasKey(aa => new {aa.AppUserId, aa.ActivityId}));
 
+            builder.Entity<TravelAttendee>(x => x.HasKey(aa => new {aa.AppUserId, aa.TravelId}));
+
             builder.Entity<ActivityAttendee>()
             .HasOne(u => u.AppUser)
             .WithMany(a => a.Activities)
@@ -30,6 +32,17 @@ namespace Persistence
             .WithMany(a => a.Attendees)
             .HasForeignKey(aa => aa.ActivityId);
 
+            builder.Entity<TravelAttendee>()
+            .HasOne(u => u.AppUser)
+            .WithMany(a => a.Travelies)
+            .HasForeignKey(aa => aa.AppUserId);
+
+            builder.Entity<TravelAttendee>()
+            .HasOne(u => u.Travel)
+            .WithMany(a => a.Attendees)
+            .HasForeignKey(aa => aa.TravelId);
+
         }
+
     }
 }

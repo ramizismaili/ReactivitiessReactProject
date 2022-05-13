@@ -6,7 +6,7 @@ import { useStore } from '../../../app/stores/store';
 import TravelFilters from './TravelFilters';
 import TravelList from './TravelList';
 
-export default observer(function ActivityDashboard() {
+export default observer(function TravelDashboard() {
     const {travelStore} = useStore();
     const {loadTravelies, travelRegistry} = travelStore;
 

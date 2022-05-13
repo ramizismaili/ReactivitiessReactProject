@@ -23,7 +23,7 @@ export default observer(function TravelForm() {
              loadTravel, loadingInitial} = travelStore;
     const {id} = useParams<{id: string}>();
 
-    const [travel, setTravel] = useState<TravelFormValues>(new TravelFormValues);
+    const [travel, setTravel] = useState<TravelFormValues>(new TravelFormValues());
 
     const validationSchema = Yup.object({
         title: Yup.string().required('The travel title is required'),

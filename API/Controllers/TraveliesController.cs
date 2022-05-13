@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Activities;
+using Application.Travelies;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +15,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTravelies()
         {
-            return HandleResult(await Mediator.Send(new List.Query()));
+            return HandleResult(await Mediator.Send(new ListT.Query()));
         }
 
         [HttpGet("{id}")]
@@ -25,22 +25,22 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateActivity(Travel travel)
+        public async Task<IActionResult> CreateTravel(Travel travel)
         {
             return HandleResult(await Mediator.Send(new CreateT.Command {Travel = travel}));
         }
 
-        [Authorize(Policy = "IsActivityHost")]
+         [Authorize(Policy = "IsTravelHost")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> EditActivity(Guid id, Travel travel)
+        public async Task<IActionResult> EditTravel(Guid id, Travel travel)
         {
             travel.Id = id;
             return HandleResult(await Mediator.Send(new EditT.Command{Travel = travel}));
         }
 
-        [Authorize(Policy = "IsActivityHost")]
+         [Authorize(Policy = "IsTravelHost")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteActivity(Guid id)
+        public async Task<IActionResult> DeleteTravel(Guid id)
         {
             return HandleResult(await Mediator.Send(new DeleteT.Command{Id = id}));
         }
@@ -49,7 +49,7 @@ namespace API.Controllers
 
         public async Task<IActionResult> Attend(Guid id)
         {
-            return HandleResult(await Mediator.Send(new UpdateAttendance.Command{Id = id}));
+            return HandleResult(await Mediator.Send(new UpdateAttendanceT.Command{Id = id}));
         }
     }
 }

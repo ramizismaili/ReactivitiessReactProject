@@ -5,7 +5,7 @@ using Application.Core;
 using MediatR;
 using Persistence;
 
-namespace Application.Activities
+namespace Application.Travelies
 {
     public class DeleteT
     {

@@ -9,7 +9,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 // name 
-namespace Application.Activities
+namespace Application.Travelies
 {
     public class CreateT
     {

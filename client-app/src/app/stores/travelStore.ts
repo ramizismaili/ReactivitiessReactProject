@@ -56,7 +56,7 @@ export default class TravelStore {
                 travel = await agent.Travelies.details(id);
                 this.setTravel(travel);
                 runInAction(() => {
-                    this.selectedTravel= travel;
+                    this.selectedTravel = travel;
                 })
                 this.setLoadingInitial(false);
                 return travel;
