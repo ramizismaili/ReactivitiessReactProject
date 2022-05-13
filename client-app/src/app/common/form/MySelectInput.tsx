@@ -1,6 +1,6 @@
-import { useField } from "formik";
-import React from "react";
-import { Form, Label, Select } from "semantic-ui-react";
+import { useField } from 'formik';
+import React from 'react';
+import { Form, Label, Select } from 'semantic-ui-react';
 
 interface Props {
     placeholder: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function MySelectInput(props: Props) {
-    const [field, meta, helpers] = useField(props.name);
+    const [field, meta, helpers] = useField(props.name); 
     return (
         <Form.Field error={meta.touched && !!meta.error}>
             <label>{props.label}</label>
