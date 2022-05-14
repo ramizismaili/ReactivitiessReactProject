@@ -30,7 +30,7 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new CreateT.Command {Travel = travel}));
         }
 
-         [Authorize(Policy = "IsTravelHost")]
+        //  [Authorize(Policy = "IsTravelHost")]
         [HttpPut("{id}")]
         public async Task<IActionResult> EditTravel(Guid id, Travel travel)
         {
@@ -38,7 +38,7 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new EditT.Command{Travel = travel}));
         }
 
-         [Authorize(Policy = "IsTravelHost")]
+        //  [Authorize(Policy = "IsTravelHost")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTravel(Guid id)
         {
